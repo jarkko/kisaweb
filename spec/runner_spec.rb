@@ -1,9 +1,9 @@
 require File.dirname(__FILE__) + '/spec_helper'
 
-describe Runner do
+describe Kisaweb::Runner do
   context "new" do
     before(:each) do
-      @runner = Runner.new("last", "first", "club", "12345")
+      @runner = Kisaweb::Runner.new("last", "first", "club", "12345")
     end
     
     it "should set the attributes correctly" do

@@ -1,9 +1,9 @@
 require File.dirname(__FILE__) + '/spec_helper'
 
-describe Run do
+describe Kisaweb::Run do
   context "new" do
     before(:each) do
-      @run = Run.new("9444", "25.65")
+      @run = Kisaweb::Run.new("9444", "25.65")
     end
     
     it "should set the contest_id and points" do

@@ -1,6 +1,6 @@
 require File.dirname(__FILE__) + '/spec_helper'
 
-describe ListItem do
+describe Kisaweb::ListItem do
   context "from_array" do
     before(:each) do
       @arr = ["189", "Paavola", "Niko",
@@ -8,7 +8,7 @@ describe ListItem do
               "35.65", "9568", "28.61",
               nil, nil, nil, nil, nil, nil,
               "70"]
-      @item = ListItem.from_array(@arr)
+      @item = Kisaweb::ListItem.from_array(@arr)
     end
     
     it "should create runner with correct details" do
@@ -28,7 +28,7 @@ describe ListItem do
     end
     
     it "should create runs correctly" do
-      @item = ListItem.from_array(@arr)
+      @item = Kisaweb::ListItem.from_array(@arr)
       @item.runs.map{|i| [i.contest_id, i.points]}.should ==
         [["9444", BigDecimal.new("35.65")],
          ["9568", BigDecimal.new("28.61")]]
