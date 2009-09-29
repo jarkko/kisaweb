@@ -11,6 +11,7 @@ require 'lib/online_ranki'
 require 'lib/list_item'
 require 'lib/runner'
 require 'lib/run'
+require 'lib/contest'
 
 #puts "H21:\n" + OnlineRanki.find("H21").inspect
 #puts "H18:\n" + OnlineRanki.find("H18").inspect

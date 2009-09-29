@@ -6,5 +6,9 @@ module Kisaweb
       self.contest_id = contest_id
       self.points = BigDecimal.new(points)
     end
+    
+    def contest
+      @contest ||= Kisaweb::Contest.find(contest_id)
+    end
   end
 end
