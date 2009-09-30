@@ -38,7 +38,7 @@ describe Kisaweb::Club do
       body = File.read(clubs_filename)
       resp = mock(:typhoeus_response, :body => body)
       
-      Kisaweb::Club.should_receive(:fetch_all).
+      Kisaweb::Club.stub(:fetch_all).
                     and_return(resp)
       @clubs = Kisaweb::Club.all
     end

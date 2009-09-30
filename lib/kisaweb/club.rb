@@ -9,7 +9,7 @@ module Kisaweb
     
     def self.find(abbr)
       all.select do |club|
-        club.abbreviation.downcase == abbr.downcase
+        club.abbreviation.to_s.downcase == abbr.downcase
       end.first
     end
     

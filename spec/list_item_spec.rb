@@ -1,6 +1,15 @@
 require File.dirname(__FILE__) + '/spec_helper'
 
 describe Kisaweb::ListItem do
+  before(:all) do
+    clubs_filename = File.dirname(__FILE__) + "/fixtures/clubs.txt"
+    body = File.read(clubs_filename)
+    resp = mock(:typhoeus_response, :body => body)
+    
+    Kisaweb::Club.stub(:fetch_all).
+                  and_return(resp)
+  end
+  
   context "from_array" do
     before(:each) do
       @arr = ["189", "Paavola", "Niko",
@@ -14,7 +23,7 @@ describe Kisaweb::ListItem do
     it "should create runner with correct details" do
       @item.runner.first_name.should == "Niko"
       @item.runner.last_name.should == "Paavola"
-      @item.runner.club.should == "HimU"
+      @item.runner.club.abbreviation.should == "HimU"
       @item.runner.license_number.should == "1223"
     end
     
