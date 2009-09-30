@@ -17,10 +17,12 @@ Gem::Specification.new do |s|
      "README.markdown"
   ]
   s.files = [
-    "LICENSE",
+    ".gitignore",
+     "LICENSE",
      "README.markdown",
      "Rakefile",
      "VERSION",
+     "kisaweb.gemspec",
      "lib/kisaweb.rb",
      "lib/kisaweb/base.rb",
      "lib/kisaweb/contest.rb",
@@ -38,7 +40,7 @@ Gem::Specification.new do |s|
   s.rdoc_options = ["--charset=UTF-8"]
   s.require_paths = ["lib"]
   s.rubygems_version = %q{1.3.5}
-  s.summary = %q{Ruby Gem for interfacing with the SSL Kisaweb API}
+  s.summary = %q{Ruby client for SSL Kisaweb API}
   s.test_files = [
     "spec/contest_spec.rb",
      "spec/list_item_spec.rb",
