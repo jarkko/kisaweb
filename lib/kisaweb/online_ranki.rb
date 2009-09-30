@@ -14,7 +14,7 @@ module Kisaweb
     end
     
     def self.categories
-      parse_categories(fetch_categories.body)
+      @@categories ||= parse_categories(fetch_categories.body)
     end
 
     private
