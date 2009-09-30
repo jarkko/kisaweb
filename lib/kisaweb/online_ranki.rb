@@ -8,7 +8,30 @@ module Kisaweb
         ListItem.from_array(row)
       end
     end
+    
+    def self.date
+      Date.parse(fetch_date.body)
+    end
+    
+    def self.categories
+      parse_categories(fetch_categories.body)
+    end
 
+    private
+    
+    def self.parse_categories(str)
+      str.split("\n").map do |line|
+        title, amount = line.split
+        Category.new(title, amount)
+      end
+    end
+
+    define_remote_method :fetch_date,
+                         :path => "/ranki/pvm.txt",
+                         :cache_responses => 6000
     define_remote_method :fetch_class, :path => "/ranki/:klass.txt"
+    define_remote_method :fetch_categories,
+                         :path => "/ranki/sarjat.txt",
+                         :cache_responses => 6000
   end
 end
