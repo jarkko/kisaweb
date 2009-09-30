@@ -5,7 +5,7 @@
 
 Gem::Specification.new do |s|
   s.name = %q{kisaweb}
-  s.version = "0.0.1"
+  s.version = "0.0.2"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Jarkko Laine"]
@@ -25,13 +25,19 @@ Gem::Specification.new do |s|
      "kisaweb.gemspec",
      "lib/kisaweb.rb",
      "lib/kisaweb/base.rb",
+     "lib/kisaweb/category.rb",
+     "lib/kisaweb/club.rb",
      "lib/kisaweb/contest.rb",
      "lib/kisaweb/list_item.rb",
      "lib/kisaweb/online_ranki.rb",
      "lib/kisaweb/run.rb",
      "lib/kisaweb/runner.rb",
+     "spec/category_spec.rb",
+     "spec/club_spec.rb",
      "spec/contest_spec.rb",
+     "spec/fixtures/clubs.txt",
      "spec/list_item_spec.rb",
+     "spec/online_ranki_spec.rb",
      "spec/run_spec.rb",
      "spec/runner_spec.rb",
      "spec/spec_helper.rb"
@@ -42,8 +48,11 @@ Gem::Specification.new do |s|
   s.rubygems_version = %q{1.3.5}
   s.summary = %q{Ruby client for SSL Kisaweb API}
   s.test_files = [
-    "spec/contest_spec.rb",
+    "spec/category_spec.rb",
+     "spec/club_spec.rb",
+     "spec/contest_spec.rb",
      "spec/list_item_spec.rb",
+     "spec/online_ranki_spec.rb",
      "spec/run_spec.rb",
      "spec/runner_spec.rb",
      "spec/spec_helper.rb"
