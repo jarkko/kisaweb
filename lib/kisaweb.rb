@@ -7,8 +7,8 @@ require "bigdecimal"
 
 # third party
 require 'rubygems'
-gem 'pauldix-typhoeus'
-gem 'fastercsv'
+gem 'pauldix-typhoeus', ">=0.1.2"
+gem 'fastercsv', ">=1.5.0"
 require 'faster_csv'
 require 'typhoeus'
 
