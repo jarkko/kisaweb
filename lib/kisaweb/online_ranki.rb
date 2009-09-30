@@ -10,7 +10,7 @@ module Kisaweb
     end
     
     def self.date
-      Date.parse(fetch_date.body)
+      @@date ||= Date.parse(fetch_date.body)
     end
     
     def self.categories
