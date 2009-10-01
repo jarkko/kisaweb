@@ -2,7 +2,7 @@ module Kisaweb
   class OnlineRanki < Kisaweb::Base
     def self.find(klass)
       res = fetch_class(:klass => klass)
-      res_arr = FasterCSV.parse(Iconv.iconv('utf-8', 'latin1', res.body).first)
+      res_arr = FasterCSV.parse(Iconv.iconv('utf-8', 'latin1', res.body).first.strip)
       res_arr.shift
       res_arr.map do |row|
         ListItem.from_array(row)
@@ -10,11 +10,12 @@ module Kisaweb
     end
     
     def self.date
-      @@date ||= Date.parse(Iconv.iconv('utf-8', 'latin1', fetch_date.body).first)
+      @@date ||= Date.parse(Iconv.iconv('utf-8', 'latin1', fetch_date.body).first.strip)
     end
     
     def self.categories
-      @@categories ||= parse_categories(Iconv.iconv('utf-8', 'latin1', fetch_categories.body).first)
+      @@categories ||= parse_categories(Iconv.iconv('utf-8', 'latin1',
+                                              fetch_categories.body).first.strip)
     end
 
     private

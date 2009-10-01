@@ -39,7 +39,7 @@ module Kisaweb
     
     def self.find_all
       res = fetch_all
-      res_arr = FasterCSV.parse(Iconv.iconv('utf-8', 'latin1', res.body).first)
+      res_arr = FasterCSV.parse(Iconv.iconv('utf-8', 'latin1', res.body).first.strip)
       res_arr.shift
       res_arr.map do |row|
         from_csv_array(row)

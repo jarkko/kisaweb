@@ -49,6 +49,10 @@ describe Kisaweb::Club do
     it "should fetch and build clubs" do
       @clubs.first.abbreviation.should == "AOK"
     end
+    
+    it "should not have empty clubs" do
+      @clubs.select{|c| c.name.nil? && c.abbreviation.nil? }.size.should == 0
+    end
   end
   
   describe "find" do
