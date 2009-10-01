@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{kisaweb}
-  s.version = "0.0.3"
+  s.version = "0.0.4"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Jarkko Laine"]
-  s.date = %q{2009-09-30}
+  s.date = %q{2009-10-01}
   s.description = %q{Ruby Gem for interfacing with the SSL Kisaweb API}
   s.email = %q{jarkko@jlaine.net}
   s.extra_rdoc_files = [

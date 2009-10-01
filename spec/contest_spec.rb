@@ -49,4 +49,19 @@ describe Kisaweb::Contest do
     end
 
   end
+  
+  describe "attributes" do
+    before(:each) do
+      Date.stub(:new).and_return(:date)
+      Date.stub(:parse).and_return(:date)
+      @line = ["(9399) 12.4.2009 ", "Saaristorastit", " Pargas IF   "]
+      @contest = Kisaweb::Contest.from_csv_array(@line)
+    end
+    
+    it "should return a hash of attributes" do
+      @contest.attributes.should == {:code => "9399", :date => Date.new(2009,12,4), 
+                                     :title => "Saaristorastit",
+                                     :organizer => "Pargas IF"}
+    end
+  end
 end

@@ -24,6 +24,15 @@ module Kisaweb
       contest
     end
     
+    def attributes
+      {
+        :title => title,
+        :organizer => organizer,
+        :code => code,
+        :date => date
+      }
+    end
+    
     private
     
     def self.find_all
