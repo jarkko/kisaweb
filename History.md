@@ -1,3 +1,6 @@
+== 0.0.8 / 2009-10-01
+  * Don't bomb if Club.find is called with a nil argument
+
 == 0.0.7 / 2009-10-01
   * Strip all strings from API
 
