@@ -24,6 +24,17 @@ module Kisaweb
       club
     end
     
+    def attributes
+      {
+        :abbreviation => abbreviation,
+        :name => name,
+        :area => area,
+        :url => url,
+        :contact_email => contact_email,
+        :reference_number => reference_number
+      }
+    end
+    
     private
     
     def self.find_all

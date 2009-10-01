@@ -1,6 +1,15 @@
 require File.dirname(__FILE__) + '/spec_helper'
 
 describe Kisaweb::Club do
+  before(:each) do
+    clubs_filename = File.dirname(__FILE__) + "/fixtures/clubs.txt"
+    body = File.read(clubs_filename)
+    resp = mock(:typhoeus_response, :body => body)
+    
+    Kisaweb::Club.stub(:fetch_all).
+                  and_return(resp)
+  end
+  
   describe "from_csv_array" do
     before(:each) do
       @arr = ["AOK", "Akilles OK", "FSO", "http://www.akilles.fi/aok/info.html", "peter.tallberg@foobar.fi", "Peter Tallberg", nil, nil, "110", " "]
@@ -34,12 +43,6 @@ describe Kisaweb::Club do
   
   describe "all" do
     before(:each) do
-      clubs_filename = File.dirname(__FILE__) + "/fixtures/clubs.txt"
-      body = File.read(clubs_filename)
-      resp = mock(:typhoeus_response, :body => body)
-      
-      Kisaweb::Club.stub(:fetch_all).
-                    and_return(resp)
       @clubs = Kisaweb::Club.all
     end
     
@@ -67,6 +70,21 @@ describe Kisaweb::Club do
       it "should find correct club" do
         @club.name.should == "Tampereen Pyrintö"
       end
+    end
+  end
+  
+  describe "attributes" do
+    before(:each) do
+      @club = Kisaweb::Club.find("TP")
+    end
+    
+    it "should return a hash of attributes" do
+      @club.attributes.should == {:abbreviation => "TP",
+                                  :name => "Tampereen Pyrintö",
+                                  :area => "Häme",
+                                  :url => "http://www.tampereenpyrinto.fi/suunnistus",
+                                  :contact_email => "juha.laakkonen@spectra.fi",
+                                  :reference_number => "5241"}
     end
   end
 end
