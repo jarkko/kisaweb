@@ -75,6 +75,16 @@ describe Kisaweb::Club do
         @club.name.should == "Tampereen Pyrintö"
       end
     end
+    
+    context "with nil as attribute" do
+      before(:each) do
+        @club = Kisaweb::Club.find(nil)
+      end
+      
+      it "should return nil but not bomb" do
+        @club.should be_nil
+      end
+    end
   end
   
   describe "attributes" do
