@@ -1,3 +1,6 @@
+== 0.0.7 / 2009-10-01
+  * Strip all strings from API
+
 == 0.0.6 / 2009-10-01
   * Added Club#attributes
 
