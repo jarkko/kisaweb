@@ -4,6 +4,7 @@ $KCODE = "u"
 
 # stdlib
 require "bigdecimal"
+require "iconv"
 
 # third party
 require 'rubygems'
