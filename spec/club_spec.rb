@@ -1,3 +1,5 @@
+#encoding: utf-8
+
 require File.dirname(__FILE__) + '/spec_helper'
 
 describe Kisaweb::Club do
@@ -97,7 +99,7 @@ describe Kisaweb::Club do
                                   :name => "Tampereen Pyrintö",
                                   :area => "Häme",
                                   :url => "http://www.tampereenpyrinto.fi/suunnistus",
-                                  :contact_email => "juha.laakkonen@spectra.fi",
+                                  :contact_email => "juha.laakkonenlaakkonen@spectra.spectra.fi",
                                   :reference_number => "5241"}
     end
   end
