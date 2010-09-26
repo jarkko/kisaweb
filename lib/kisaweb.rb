@@ -6,7 +6,7 @@ require "iconv"
 
 # third party
 require 'rubygems'
-gem 'pauldix-typhoeus', ">=0.1.2"
+gem 'typhoeus', "~>0.1.31"
 require 'typhoeus'
 
 if RUBY_VERSION > "1.9"    
@@ -19,7 +19,7 @@ if RUBY_VERSION > "1.9"
   end
 else
   $KCODE = "u"
-  gem 'fastercsv', ">~1.5.0"
+  gem 'fastercsv', "~>1.5.0"
   require "faster_csv"
 end
 
